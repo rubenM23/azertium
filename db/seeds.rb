@@ -23,10 +23,28 @@ receiver = Person.find_or_create_by(name: 'Maria', birthdate: '23-03-1950')
     subject: 'Asunto 2',
     content: 'Comunicado 2',
     previous_release: Release.last,
+  },
+  {
+    creator: receiver,
+    receiver: creator,
+    subject: 'Asunto 3',
+    content: 'Comunicado 3',
+    previous_release: nil,
   }
 ].each do |release|
   Release.find_or_create_by(release)
 end
 
+# Create attached files for release
 
+[
+  {
+    release_id: 1,
+  },
+  {
+    release_id: 1,
+  }
+].each do |attach|
+  Attached.create(attach)
+end
 
