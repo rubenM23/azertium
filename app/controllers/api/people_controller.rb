@@ -1,5 +1,6 @@
 module Api
   class PeopleController < ActionController::Base
+    skip_before_action :verify_authenticity_token
 
     def index
       @people = Person.adults
@@ -44,7 +45,7 @@ module Api
         array.shift
       end
       @result << i
-      get_arrays(array, num, res) if @result.length < res
+      get_arrays(array, num, res) if @result.length < num
     end
   end
 end
