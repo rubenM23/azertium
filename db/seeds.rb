@@ -38,10 +38,10 @@ end
 
 [
   {
-    release_id: Release.first,
+    release: Release.first,
   },
   {
-    release_id: Release.first,
+    release: Release.first,
   }
 ].each do |attach|
   Attached.create(attach)
