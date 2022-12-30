@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     get 'releases', to: 'people#index'
-    get 'factorial', to: 'people#factorial'
-    get 'array', to: 'people#split_array'
+    post 'factorial', to: 'people#factorial'
+    post 'array', to: 'people#split_array'
   end
 end
