@@ -6,7 +6,7 @@ module Api
     end
 
     def factorial
-      f = 10
+      f = params[:number]
       @factorial = []
       calc_factorial(f)
       render json: @factorial
